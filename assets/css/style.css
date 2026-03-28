@@ -1360,8 +1360,12 @@ a.course-card-link {
     text-decoration: none;
 }
 h6.course-card-title {
+    color: black;
     margin: 0;
-    font-size: 20px;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-decoration: none;
 }
 p.course-card-description {
     margin: 15px 0 0;
@@ -2041,9 +2045,12 @@ h5.courses-type-title {
     font-size: 20px;
 }
 .course-card {
-    border: 1px solid black;
     overflow: hidden;
     border-radius: 8px;
+    border: 1px solid #00000033;
+    padding-top: 0;
+    margin-top: 0;
+    text-decoration: none;
 }
 .course-card-thumb {
     width: 100%;
@@ -2074,7 +2081,8 @@ h5.courses-type-title {
 }
 .course-card-duration {
     font-weight: 400;
-    color: white;
+    color: black;
+    text-decoration: none;
 }
 .review-card-ratings {
     display: flex;
@@ -2086,4 +2094,68 @@ h5.courses-type-title {
     font-weight: 500;
     font-size: 14px;
     color: #f4d051;
+}
+.course-div-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+.card-footer {
+    padding: 0 15px;
+}
+.review-card-star::before {
+    content: "\f005";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 500;
+    font-size: 14px;
+    color: #f4d051;
+}
+.review-card-star-full::before {
+    font-weight: 900;
+}
+.card-footer {
+    padding: 0 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+span.course-card-price.fs-16 {
+    color: black;
+}
+
+@media (max-width: 1025px) {
+    .course-banner-row {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    .course-banner-row .banner__content {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    .live-video {
+        margin-bottom: 25px;
+    }
+      .course-div-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 769px) {
+    .course-banner-first, course-banner-second {
+        width: 100%;
+    }
+    .live-video {
+        display: flex !important;
+        gap: 15px;
+        align-content: space-around;
+        flex-direction: column;
+    }
+    .live-video__frame {
+        width: 100%;
+    }
+    .course-div-row {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
