@@ -8,7 +8,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 40px;
+    padding: 10px 40px;
 }
 .nav-link {
   position: relative;
@@ -72,6 +72,7 @@ body {
     align-items: center;
     justify-content: center;
     gap: 5px;
+    text-decoration: none;
 }
 
 .auth-buttons {
@@ -152,14 +153,14 @@ button.navbar-toggler {
     pointer-events: none;
 }
 
-/* Hover par open */
+
 .nav-item.dropdown:hover .dropdown-menu {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
     position: absolute;
     list-style: none;
-    top: 267% !important;
+    top: 125% !important;
     transform: scaleY(1);
     transform-origin: top center;
     transition: 0.3s;
@@ -167,7 +168,6 @@ button.navbar-toggler {
     padding: 0;
     list-style: none;
     min-width: 190px;
-    padding: 10px 0;
     border: 1px solid #cccccc;
     z-index: 111;
 }
@@ -466,10 +466,11 @@ a.banner-keywords-link {
 }
 
 img.banner-img {
-    width: 100%;
+    width: 510px;
     height: auto;
     object-fit: cover;
     object-position: center center;
+        border-radius: 5px;
 }
 
 .banner-floating-cards {
@@ -480,7 +481,7 @@ img.banner-img {
     transform: translateY(20%);
     display: flex;
     flex-direction: column;
-    gap: 40px 0px;
+    gap: 30px 0px;
 }
 
 .banner-floating-cards .floating-card:first-child {
@@ -553,7 +554,13 @@ img.banner-img {
     background-color: #000000;
     margin: 0 10px;
 }
-
+img.course-card-img {
+    height: 48px;
+    width: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 @media (max-width: 1248px) {
     .banner-first-div {
         width: 53%;
@@ -1321,7 +1328,7 @@ section.courses {
 
 .courses-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
 .courses-card-icon {
@@ -1680,9 +1687,13 @@ section.subscribe-now {
     padding: 10px;
     background-color: white;
 }
+.course-card-btn-enroll {
+    color: black !important;
+    cursor: no-drop !important;
+}
 .btn {
     font-size: 1.125rem;
-    color: white !important;
+    color: white;
     font-weight: 600;
     display: inline-flex;
     justify-content: center;
@@ -2054,7 +2065,7 @@ h5.courses-type-title {
 }
 .course-card-thumb {
     width: 100%;
-    height: 215px;
+    height: auto;
     object-fit: cover;
 }
 .course-card-badge {    
@@ -2158,4 +2169,193 @@ span.course-card-price.fs-16 {
     .course-div-row {
         grid-template-columns: repeat(1, 1fr);
     }
+}
+
+
+/* ----- Indicatror css ----- */
+
+.course-detail-page {
+    margin: 36px 0 170px;
+}
+.course-detail-page-row {
+    display: flex;
+    gap: 24px;
+}
+.course-detail-page-column--content {
+    width: 58.63%;
+}
+.course-title {
+    font-size: 36px;
+    margin-bottom: 24px;
+    text-transform: capitalize;
+}
+.course-description {
+    max-width: 85%;
+    font-size: 1.125rem;
+    font-weight: 400;
+    margin-bottom: 24px;
+}
+.course-wywl {
+    padding: 24px 16px;
+    margin-bottom: 40px;
+    border-radius: 8px;
+    border: 1px solid #00000033;
+}
+.course-wywl-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+.course-wywl-inner {
+    position: relative;
+}
+.course-wywl-content.show {
+    max-height: max-content;
+}
+.course-wywl-content {
+    position: relative;
+    overflow: hidden;
+}
+.course-wywl-list {
+    display: grid;
+    gap: 16px 24px;
+    grid-template-columns: auto auto;
+    padding: 0;
+}
+.course-wywl-list-item {
+    display: flex;
+    align-items: start;
+    gap: 12px;
+}
+.course-wywl-list-item .icon {
+    width: 24px;
+    height: 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 1.125rem;
+}
+.course-wywl-list-item .text {
+    font-size: 0.875rem;
+    margin: 0;
+}
+.course-detail-page-column--sidebar {
+    width: 41.37%;
+}
+.course-detail-page-column {
+    flex-shrink: 1;
+}
+.course-sidebar {
+    position: sticky;
+    top: 90px;
+}
+.course-sidebar-header .course-thumb {
+    width: 100%;
+}
+.course-sidebar-body {
+    margin-top: 10px;
+    border-radius: 8px;
+    border: 1px solid #00000033;
+}
+.course-sidebar-box:not(:last-child) {
+    border-bottom: 1px solid #00000033;
+}
+.course-sidebar-box:not(:last-child) {
+    border-bottom: 1px solid #00000033;
+}
+.course-sidebar-box--two .course-details .course-price {
+    font-weight: 600;
+    text-transform: capitalize;
+    margin-bottom: 0px;
+    font-size: clamp(1.125rem, 1.3vw + 1rem, 1.75rem);
+}
+.course-sidebar-box--two .course-details .course-promo-apply-btn, .course-sidebar-box--two .course-details .course-share-btn {
+    font-size: 0.875rem;
+    font-weight: 400;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
+span {
+    display: inline-block;
+}
+.course-sidebar-box--two .course-details .course-promo-apply-btn, .course-sidebar-box--two .course-details .course-share-btn {
+    font-size: 0.875rem;
+    font-weight: 400;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
+.course-sidebar-box--two .course-details .course-join-btn {
+    margin-top: 16px;
+}
+.course-sidebar-box {
+    padding: 16px;
+}
+.course-sidebar-box--three .title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.course-sidebar-box--three .course-includes {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.course-sidebar-box--three .course-includes-item .text {
+    font-size: 0.875rem;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+@media (max-width: 1024px) {
+    .course-title {
+        font-size: 30px;
+    }
+    .course-description {
+        font-size: 16px;
+    }
+    .course-detail-page-column--content {
+        width: 55%;
+    }
+    .course-detail-page-column--sidebar {
+        width: 45%;
+    }
+    .course-wywl-list {
+        gap: 15px 15px;
+    }
+    .course-wywl-title {
+        margin-bottom: 20px;
+    }
+    .course-wywl-list-item .icon {
+        width: 18px;
+        height: 18px;
+    }
+    .course-detail-page-row {
+        display: flex;
+        gap: 20px;
+    }
+}
+@media (max-width: 768px) {
+    .course-detail-page-column--content {
+        width: 100%;
+    }
+    .course-detail-page-column--sidebar {
+            width: 100%;
+    }
+    .course-detail-page-row {
+        flex-direction: column;
+    }
+   .course-wywl {
+        margin-bottom: 0;
+    }
+    .course-description {
+        max-width: 100%;
+    }
+    
 }
