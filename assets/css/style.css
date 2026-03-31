@@ -369,16 +369,44 @@ button.navbar-toggler.collapsed {
         width: 300px;
     }
 }
-
+.indicator-page .course-card-btn-enroll {
+    cursor: pointer !important;
+}
 
 
 /* ----------- main wrapper ------- */
 
+
+
 section.banner {
+    position: relative;
     padding-top: 120px;
     padding-bottom: 120px;
+    overflow: hidden;
+    background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #0f2027);
+    background-size: 400% 400%;
+    animation: gradientMove 12s ease infinite;
+    color: white;
 }
-
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+#candlestickCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.25;
+    z-index: 0;
+}
+.floating-card-content h6 {
+    padding: 0;
+    margin: 0;
+    color: black;
+}
 .banner-div {
     display: flex;
     flex-wrap: wrap;

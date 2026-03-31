@@ -180,7 +180,7 @@
             <div class="custom--container">
                 <div class="course-detail-page-row">
                     <div class="course-detail-page-column course-detail-page-column--content">
-                        <h1 class="course-title">Shreeji techno indicator</h1>
+                        <h1 class="course-title">Swing/Scalping Indicator</h1>
                         <p class="course-description">Shreeji Techno Indicator is a versatile, multi-market technical
                             analysis tool designed to assist traders in identifying potential market trends across
                             Indian indices, Forex, and Cryptocurrency markets.</p>
@@ -252,7 +252,7 @@
                             </div>
 
                         </div>
-                        <div class="pricing_of_algo">
+                        <!-- <div class="pricing_of_algo">
                             <table class="algo-table">
                                 <thead>
                                     <tr>
@@ -287,7 +287,7 @@
                                     </tr>
                                 </tbody>
                             </table>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="course-detail-page-column course-detail-page-column--sidebar" bis_skin_checked="1">
                         <aside class="course-sidebar">
@@ -366,19 +366,19 @@
                                                         </select>
                                                         <label>Plan Duration</label>
                                                     </div>
-                                                    <div class="input-group">
-                                                        <select name="price" required>
-                                                            <option value="" disabled selected></option>
-                                                            <option>1 Month = 4500</option>
-                                                            <option>3 Month = 9000</option>
-                                                            <option>6 Month = 15000</option>
-                                                            <option>1 Month Combo = 8,100</option>
-                                                            <option>3 Month Combo = 16,200</option>
-                                                            <option>6 Month Combo = 27,000</option>
-                                                            <option>12 Month Combo = 45,000</option>
-                                                        </select>
-                                                        <label>Price</label>
-                                                    </div>
+                                                        <div class="input-group">
+                                                            <select name="price" required>
+                                                                <option value="" disabled selected></option>
+                                                                <option>1 Month = 4500</option>
+                                                                <option>3 Month = 9000</option>
+                                                                <option>6 Month = 15000</option>
+                                                                <option>1 Month Combo = 8,100</option>
+                                                                <option>3 Month Combo = 16,200</option>
+                                                                <option>6 Month Combo = 27,000</option>
+                                                                <option>12 Month Combo = 45,000</option>
+                                                            </select>
+                                                            <label>Price</label>
+                                                        </div>
 
                                                     <div class="input-group">
                                                         <input type="text" name="trading_id" required>
@@ -515,10 +515,12 @@
 <script>
     function openPopup() {
         document.getElementById("contactPopup").style.display = "flex";
+        document.body.style.overflow = "hidden"; // scroll bandh
     }
 
     function closePopup() {
         document.getElementById("contactPopup").style.display = "none";
+        document.body.style.overflow = "auto"; // scroll start
     }
 </script>
 <script>

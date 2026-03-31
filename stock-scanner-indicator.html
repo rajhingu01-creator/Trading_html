@@ -1,0 +1,582 @@
+<html class="lang=" en" itemscope="" itemtype="http://schema.org/WebPage">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Trending Name</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        .popup-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.7);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+
+        .popup-box {
+            width: 95%;
+            max-width: 420px;
+            padding: 30px;
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            color: #fff;
+            position: relative;
+             height: 60vh;
+            animation: popupFade 0.3s ease;
+             overflow: auto;
+        }
+
+        .popup-box h3 {
+            text-align: center;
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-size: 14px;
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+
+        /* Floating input */
+        .input-group {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .input-group input,
+        .input-group textarea,
+        .input-group select {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: none;
+            outline: none;
+        }
+
+        .input-group label {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            font-size: 13px;
+            color: #aaa;
+            pointer-events: none;
+            transition: 0.3s;
+        }
+
+        .input-group input:focus+label,
+        .input-group input:valid+label,
+        .input-group textarea:focus+label,
+        .input-group textarea:valid+label,
+        .input-group select:focus+label,
+        .input-group select:not([value=""])+label {
+            top: -15px;
+            font-size: 11px;
+            color: #fff;
+        }
+
+        /* Button */
+        .submit-btn {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(45deg, #00c6ff, #0072ff);
+            border: none;
+            border-radius: 8px;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .submit-btn:hover {
+            transform: scale(1.05);
+        }
+
+        /* Close button */
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 22px;
+            cursor: pointer;
+        }
+
+        /* Animation */
+        @keyframes popupFade {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="custom--container">
+            <nav class="navbar animate delay-1">
+                <a class="navbar-brand" href="index.html">
+                    <img src="Images/shree_logo.png" alt="Logo">
+                    <span class="logo-text"><span class="text-foreground">Shreeji</span> <span
+                            class="text-primary">Techno</span></span>
+                </a>
+                <button class="navbar-toggler collapsed" type="button" onclick="toggleDrawer()">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <div class="header-navbar-collapse">
+                    <ul class="menu">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="techno-algo.html">Algo System</a></li>
+                        <li class="nav-item"><a class="nav-link" href="techno-indicator.html">Techno Indicator</a></li>
+
+                        <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    </ul>
+                    <div class="auth-buttons">
+                        <a class="login" href="login.html"><i class="fa fa-user-o"></i>Login</a>
+                        <a class="register" href="register.html"><i class="fa fa-plus-circle"></i>Register</a>
+                    </div>
+                </div>
+
+            </nav>
+        </div>
+        <div class="mobile-drawer" id="mobileDrawer">
+            <div class="drawer-content">
+                <button class="close-btn" onclick="toggleDrawer()">✕</button>
+
+                <div class="mobile-menu">
+                    <div class="mobile-item"><a href="index.html">Home</a></div>
+                    <div class="mobile-item"><a href="techno-algo.html">Algo System</a></div>
+                    <div class="mobile-item"><a href="techno-indicator.html">Techno Indicator</a></div>
+                    <div class="mobile-item"><a href="courses.html">Courses</a></div>
+
+
+
+                    <div class="auth-buttons" bis_skin_checked="1">
+                        <a href="login.html" class="login"><i class="fa fa-user-o"></i>Login</a>
+                        <a href="register.html" class="register"><i class="fa fa-plus-circle"></i>Register</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-wrapper">
+
+        <div class="course-detail-page">
+            <div class="custom--container">
+                <div class="course-detail-page-row">
+                    <div class="course-detail-page-column course-detail-page-column--content">
+                        <h1 class="course-title">Stock Scanner Indicator</h1>
+                        <p class="course-description">Shreeji Techno Indicator is a versatile, multi-market technical
+                            analysis tool designed to assist traders in identifying potential market trends across
+                            Indian indices, Forex, and Cryptocurrency markets.</p>
+                        <p class="course-description">The indicator is specifically developed to help capture strong
+                            market movements (rallies) and trend opportunities by combining price action, momentum
+                            analysis, and trend-following techniques. It is structured to highlight possible entry zones
+                            during trending conditions while filtering out low-probability signals.</p>
+                        <p class="course-description">It supports multiple timeframes, making it suitable for both
+                            scalping (short-term trades) and swing trading (medium-term positions).</p>
+                        <p class="course-description">Based on historical observations, the indicator demonstrates an
+                            approximate accuracy range of 70–75% under normal market conditions, though performance may
+                            vary depending on market volatility and external factors.</p>
+                        <p class="course-description">This tool is intended strictly for analytical and educational
+                            purposes only.</p>
+                        <div class="course-wywl">
+                            <div class="course-wywl-title">What you will get</div>
+                            <div class="course-wywl-inner" bis_skin_checked="1">
+                                <div class="course-wywl-content show" bis_skin_checked="1">
+                                    <ul class="course-wywl-list">
+                                        <li class="course-wywl-list-item">
+                                            <span class="icon"><i class="fas fa-check"></i></span>
+                                            <p class="text">Course is dummy text of the printing and typesetting
+                                                industry.</p>
+                                        </li>
+                                        <li class="course-wywl-list-item">
+                                            <span class="icon"><i class="fas fa-check"></i></span>
+                                            <p class="text">Course is simply text of the printing and typesetting
+                                                industry.</p>
+                                        </li>
+                                        <li class="course-wywl-list-item">
+                                            <span class="icon"><i class="fas fa-check"></i></span>
+                                            <p class="text">Lorem Ipsum is simply dummy of the printing and typesetting
+                                                industry.</p>
+                                        </li>
+                                        <li class="course-wywl-list-item">
+                                            <span class="icon"><i class="fas fa-check"></i></span>
+                                            <p class="text">Lorem Ipsum is simply dummy text of the and typesetting
+                                                industry.</p>
+                                        </li>
+                                        <li class="course-wywl-list-item">
+                                            <span class="icon"><i class="fas fa-check"></i></span>
+                                            <p class="text">Lorem Ipsum is simply dummy text of the and typesetting
+                                                industry.</p>
+                                        </li>
+                                        <li class="course-wywl-list-item">
+                                            <span class="icon"><i class="fas fa-check"></i></span>
+                                            <p class="text">Lorem Ipsum is simply text of the printing and typesetting
+                                                industry.</p>
+                                        </li>
+                                        <li class="course-wywl-list-item">
+                                            <span class="icon"><i class="fas fa-check"></i></span>
+                                            <p class="text">Lorem Ipsum is simply dummy of the printing and typesetting
+                                                industry.</p>
+                                        </li>
+                                        <li class="course-wywl-list-item">
+                                            <span class="icon"><i class="fas fa-check"></i></span>
+                                            <p class="text">Lorem Ipsum is simply dummy text of and typesetting
+                                                industry.</p>
+                                        </li>
+                                        <li class="course-wywl-list-item">
+                                            <span class="icon"><i class="fas fa-check"></i></span>
+                                            <p class="text">Lorem Ipsum is simply text of the printing and typesetting
+                                                industry.</p>
+                                        </li>
+                                    </ul>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+                        <div class="pricing_of_algo">
+                            <table class="algo-table">
+                                <thead>
+                                    <tr>
+                                        <th>Plan</th>
+                                        <th>1 Month</th>
+                                        <th>3 Month</th>
+                                        <th>6 Month</th>
+                                        <th>12 Month</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="text-left">Swing / Scalping Indicator</td>
+                                        <td>4499</td>
+                                        <td>8999</td>
+                                        <td>14999</td>
+                                        <td>24999</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-left">Stock Scanner Indicator</td>
+                                        <td>4499</td>
+                                        <td>8999</td>
+                                        <td>14999</td>
+                                        <td>24999</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-left">Swing / Scalping + Stock Scanner</td>
+                                        <td>8099</td>
+                                        <td>16199</td>
+                                        <td>26999</td>
+                                        <td>44999</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="course-detail-page-column course-detail-page-column--sidebar" bis_skin_checked="1">
+                        <aside class="course-sidebar">
+                            <div class="course-sidebar-header" bis_skin_checked="1">
+                                <img class="course-thumb"
+                                    src="https://script.viserlab.com/tutolab/assets/images/course/64ef2c3032b0a1693396016.jpg"
+                                    alt="course">
+                            </div>
+
+                            <div class="course-sidebar-body" bis_skin_checked="1">
+                                <div class="course-sidebar-box course-sidebar-box--two" bis_skin_checked="1">
+                                    <div class="course-details" bis_skin_checked="1">
+                                        <div class="course-details-wrapper" bis_skin_checked="1">
+                                            <!-- <h4 class="course-price">
+                                                <small><del class="text-muted fs-18">$100.00</del></small>
+                                                $90.00
+                                            </h4> -->
+
+
+                                        </div>
+
+
+                                        <span class="couponResponse mt-2"></span>
+
+                                        <button class="btn btn--rounded btn--base w-100 course-join-btn payBtn"
+                                            onclick="openPopup()">
+                                            <span class="text">
+                                                <span class="payableAmount">Get in touch</span>
+                                            </span>
+                                        </button>
+                                        <!-- Contact Modal -->
+                                        <div id="contactPopup" class="popup-overlay">
+                                            <div class="popup-box">
+
+                                                <span class="close-btn" onclick="closePopup()">×</span>
+
+                                                <h3>Get In Touch</h3>
+                                                <p class="subtitle">Fill details & we’ll contact you soon 🚀</p>
+
+                                                <form id="contactForm" action="https://formspree.io/f/xojpdlyn"
+                                                    method="POST">
+
+                                                    <div class="input-group">
+                                                        <input type="text" name="name" required>
+                                                        <label>Your Name</label>
+                                                    </div>
+
+                                                    <div class="input-group">
+                                                        <input type="email" name="email" required>
+                                                        <label>Your Email</label>
+                                                    </div>
+
+                                                    <div class="input-group">
+                                                        <input type="tel" name="phone" required>
+                                                        <label>Your Phone</label>
+                                                    </div>
+
+                                                    <input type="hidden" name="plan" value="Techno Indicator System">
+
+                                                    <div class="input-group">
+                                                        <select name="interested_plan" required>
+                                                            <option value="" disabled selected></option>
+                                                            <option>Swing / Scalping Indicator</option>
+                                                            <option>Stock Scanner Indicator</option>
+                                                            <option>Swing / Scalping + Stock Scanner</option>
+                                                        </select>
+                                                        <label>Interested Plan</label>
+                                                    </div>
+                                                    <div class="input-group">
+                                                        <select name="plan_duration" required>
+                                                            <option value="" disabled selected></option>
+                                                            <option>1 Month</option>
+                                                            <option>3 Months</option>
+                                                            <option>6 Months</option>
+                                                            <option>12 Months</option>
+                                                        </select>
+                                                        <label>Plan Duration</label>
+                                                    </div>
+                                                    <div class="input-group">
+                                                        <select name="price" required>
+                                                            <option value="" disabled selected></option>
+                                                            <option>1 Month = 4500</option>
+                                                            <option>3 Month = 9000</option>
+                                                            <option>6 Month = 15000</option>
+                                                            <option>1 Month Combo = 8,100</option>
+                                                            <option>3 Month Combo = 16,200</option>
+                                                            <option>6 Month Combo = 27,000</option>
+                                                            <option>12 Month Combo = 45,000</option>
+                                                        </select>
+                                                        <label>Price</label>
+                                                    </div>
+
+                                                    <div class="input-group">
+                                                        <input type="text" name="trading_id" required>
+                                                        <label>TradingView ID</label>
+                                                    </div>
+
+                                                    <div class="input-group">
+                                                        <textarea name="message" required></textarea>
+                                                        <label>Your Message</label>
+                                                    </div>
+
+                                                    <button type="submit" class="submit-btn">Submit</button>
+                                                </form>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="course-sidebar-box course-sidebar-box--three" bis_skin_checked="1">
+                                    <h5 class="title">This course includes:</h5>
+                                    <ul class="course-includes">
+                                        <li class="course-includes-item">
+                                            <span><i class="las la-video"></i></span>
+                                            <span class="text">22 hours on-demand video</span>
+                                        </li>
+                                        <li class="course-includes-item">
+                                            <span><i class="las la-code"></i></span>
+                                            <span class="text">19 coding exercises</span>
+                                        </li>
+                                        <li class="course-includes-item">
+                                            <span><i class="las la-book"></i></span>
+                                            <span class="text">15 articles</span>
+                                        </li>
+                                        <li class="course-includes-item">
+                                            <span><i class="las la-infinity"></i></span>
+                                            <span class="text">Full lifetime access</span>
+                                        </li>
+                                        <li class="course-includes-item">
+                                            <span><i class="las la-book-open"></i></span>
+                                            <span class="text">Resources and Handbooks</span>
+                                        </li>
+                                        <li class="course-includes-item">
+                                            <span><i class="lar la-user"></i></span>
+                                            <span class="text">Community support</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <footer class="footer animate delay-1">
+        <div class="custom--container">
+            <div class="footer-top">
+                <div class="footer-logo">
+                    <div class="logo-text">
+                        <a href="index.html">
+                            <img src="Images/shree_logo.png" alt="Logo">
+                        </a>
+                    </div>
+                </div>
+
+                <nav class="footer-nav">
+                    <ul>
+                        <li><a class="footer-menu-link" href="index.html">Home</a></li>
+                        <li><a class="footer-menu-link" href="courses.html">Courses</a></li>
+                        <li><a class="footer-menu-link" href="contact.html">Contact</a></li>
+                        <li><a class="footer-menu-link" href="login.html">Login</a></li>
+                        <li><a class="footer-menu-link" href="register.html">Register</a></li>
+                    </ul>
+                </nav>
+
+
+            </div>
+
+            <hr class="footer-divider">
+
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    <p>&copy; 2026 <a href="#">TutoLab</a>. All Rights Reserved</p>
+                </div>
+
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+
+                <div class="social-icons">
+                    <a href="#" class="social-icon fb"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon li"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-icon tw"><i class="fab fa-x-twitter"></i></a>
+                    <a href="#" class="social-icon tg"><i class="fab fa-telegram-plane"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+</body>
+<script>
+    const elements = document.querySelectorAll('.animate');
+
+    function showOnScroll() {
+        const triggerBottom = window.innerHeight * 0.85;
+
+        elements.forEach(el => {
+            const boxTop = el.getBoundingClientRect().top;
+
+            if (boxTop < triggerBottom) {
+                el.classList.add('show');
+            } else {
+                el.classList.remove('show'); // remove if you want repeat animation
+            }
+        });
+    }
+
+    window.addEventListener('scroll', showOnScroll);
+    window.addEventListener('load', showOnScroll);
+</script>
+<script>
+    function toggleDrawer() {
+        document.getElementById("mobileDrawer").classList.toggle("active");
+    }
+</script>
+<script>
+    function openPopup() {
+        document.getElementById("contactPopup").style.display = "flex";
+        document.body.style.overflow = "hidden"; // scroll bandh
+    }
+
+    function closePopup() {
+        document.getElementById("contactPopup").style.display = "none";
+        document.body.style.overflow = "auto"; // scroll start
+    }
+</script>
+<script>
+    document.querySelectorAll(".mobile-item.has-dropdown > a").forEach(item => {
+        item.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            let parent = this.parentElement;
+            let icon = this.querySelector(".icon");
+
+            parent.classList.toggle("active");
+
+            // icon change + / -
+            if (parent.classList.contains("active")) {
+                icon.innerHTML = "−";
+            } else {
+                icon.innerHTML = "+";
+            }
+        });
+    });
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Language Dropdown Toggle
+        const langBtn = document.getElementById('langBtn');
+        const langDropdown = document.getElementById('langDropdown');
+
+        langBtn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            const isVisible = langDropdown.style.display === 'flex';
+            langDropdown.style.display = isVisible ? 'none' : 'flex';
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function () {
+            langDropdown.style.display = 'none';
+        });
+
+        // Back to Top Button Logic
+        const backToTopBtn = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', function () {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.style.display = 'flex';
+            } else {
+                backToTopBtn.style.display = 'none';
+            }
+        });
+
+        backToTopBtn.addEventListener('click', function () {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>
+
+</html>

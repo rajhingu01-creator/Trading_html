@@ -17,7 +17,8 @@
             <nav class="navbar animate delay-1">
                 <a class="navbar-brand" href="index.html">
                     <img src="Images/shree_logo.png" alt="Logo">
-                    <span class="logo-text"><span class="text-foreground">Shreeji</span> <span class="text-primary">Techno</span></span>
+                    <span class="logo-text"><span class="text-foreground">Shreeji</span> <span
+                            class="text-primary">Techno</span></span>
                 </a>
                 <button class="navbar-toggler collapsed" type="button" onclick="toggleDrawer()">
                     <i class="fa fa-bars"></i>
@@ -26,8 +27,8 @@
                     <ul class="menu">
                         <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="techno-algo.html">Algo System</a></li>
-                        <li class="nav-item"><a class="nav-link" href="techno-indicator.html">Techno Indicator</a></li>
-                        
+                        <li class="nav-item"><a class="nav-link" href="indicator.html">Indicator</a></li>
+
                         <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
                         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                     </ul>
@@ -49,7 +50,7 @@
                     <div class="mobile-item"><a href="techno-indicator.html">Techno Indicator</a></div>
                     <div class="mobile-item"><a href="courses.html">Courses</a></div>
 
-                   
+
 
                     <div class="auth-buttons" bis_skin_checked="1">
                         <a href="login.html" class="login"><i class="fa fa-user-o"></i>Login</a>
@@ -61,97 +62,70 @@
     </header>
     <main class="main-wrapper">
         <section class="banner">
-            <div class="custom--container" bis_skin_checked="1">
-                <div class="banner-div" bis_skin_checked="1">
-                    <div class="banner-first-div animate delay-1" bis_skin_checked="1">
-                        <h1 class="banner-title dynamicColor" data-color_word="[6]">Secure Your Future With Professional
-                            <span class="text--base">Courses</span> And Skill Growth.
+            <canvas id="candlestickCanvas"></canvas>
+
+            <div class="custom--container">
+                <div class="banner-div">
+
+                    <div class="banner-first-div">
+                        <h1 class="banner-title">
+                            Secure Your Future With Professional
+                            <span class="text--base">Courses</span>
+                            And Skill Growth.
                         </h1>
 
-                        <p class="banner-subtitle">Escape Financial Struggle and Take Control of Your Future in our 12
-                            Week Transformation Course</p>
+                        <p class="banner-subtitle">
+                            Escape Financial Struggle and Take Control of Your Future in our 12
+                            Week Transformation Course
+                        </p>
 
-                        <div class="banner-inner" bis_skin_checked="1">
-                            <a class="btn--rounded banner-btn-join" href="courses">
+                        <div class="banner-inner">
+                            <a class="banner-btn-join" href="#">
                                 <span class="text"> Explore It </span>
-                                <span class="icon"><i class="fa fa-arrow-right"></i></span>
+                                <span class="icon">→</span>
                             </a>
 
-                            <div class="banner-info" bis_skin_checked="1">
-                                <div class="banner-info-student-images" bis_skin_checked="1">
-                                    <img src="Images/profile_icon.jpg" alt="Student">
-                                </div>
-
-                                <p class="banner-info-text dynamicColor" data-color_word="[4]">Trusted by over <span
-                                        class="text--base">10,000+</span> students</p>
-                            </div>
+                            <p class="banner-info-text">
+                                Trusted by over <span class="text--base">10,000+</span> students
+                            </p>
                         </div>
 
                         <ul class="banner-keywords">
-                            <li class="banner-keywords-item">
-                                <a class="banner-keywords-link" href="#">Trading
-                                    Courses</a>
-                            </li>
-                            <li class="banner-keywords-item">
-                                <a class="banner-keywords-link" href="#">Algo Trading
-                                    Systems</a>
-                            </li>
-                            <li class="banner-keywords-item">
-                                <a class="banner-keywords-link" href="#">Custom
-                                    Indicators</a>
-                            </li>
+                            <li><a class="banner-keywords-link" href="#">Trading Courses</a></li>
+                            <li><a class="banner-keywords-link" href="#">Algo Trading Systems</a></li>
+                            <li><a class="banner-keywords-link" href="#">Custom Indicators</a></li>
                         </ul>
                     </div>
-                    <div class="banner-second-div animate delay-2" bis_skin_checked="1">
-                        <img class="banner-img" src="Images/Tacticaltrading.png" alt="Banner Image">
 
-                        <div class="banner-floating-cards" bis_skin_checked="1">
-                            <div class="floating-card animate delay-3" bis_skin_checked="1">
-                                <div class="floating-card-icon" bis_skin_checked="1">
-                                    <img src="Images/icon_5.png" alt="Close Tag">
+                    <div class="banner-second-div">
+                        <img class="banner-img" src="Images/standing.png">
+
+                        <div class="banner-floating-cards">
+                            <div class="floating-card">
+                                <div class="floating-card-icon">
+                                    <img src="Images/icon_5.png">
                                 </div>
-                                <div class="floating-card-content" bis_skin_checked="1">
-                                    <h6 class="floating-card-title">Trading Basics Mastery</h6>
-                                    <!-- <ul class="floating-card-info">
-                                        <li class="floating-card-info-item">
-                                            <span>$99.00 USD</span>
-                                        </li>
-                                        <li class="floating-card-info-item">
-                                            <span>18 Lessons</span>
-                                        </li>
-                                    </ul> -->
+                                <div class="floating-card-content">
+                                    <h6>Trading Basics Mastery</h6>
                                 </div>
                             </div>
 
-                            <div class="floating-card animate animate-left delay-3" bis_skin_checked="1">
-                                <div class="floating-card-icon" bis_skin_checked="1">
-                                    <img src="Images/icon_7.png" alt="Close Tag">
+                            <div class="floating-card">
+                                <div class="floating-card-icon">
+                                    <img src="Images/icon_7.png">
                                 </div>
-                                <div class="floating-card-content" bis_skin_checked="1">
-                                    <h6 class="floating-card-title">Pro Trading Indicators Pack</h6>
-
-                                    <!-- <ul class="floating-card-info">
-                                        <li class="floating-card-info-item">
-                                            <span>$99.00 USD</span>
-                                        </li>
-                                        <li class="floating-card-info-item">
-                                            <span>18 Lessons</span>
-                                        </li>
-                                    </ul> -->
+                                <div class="floating-card-content">
+                                    <h6>Pro Trading Indicators Pack</h6>
                                 </div>
                             </div>
-
-
-
-
-
                         </div>
                     </div>
+
                 </div>
             </div>
         </section>
     </main>
-    <section class="used-by">
+    <!-- <section class="used-by">
         <div class="custom--container" bis_skin_checked="1">
             <h6 class="used-by-title animate delay-1">Used by the world's most average companies</h6>
             <div class="used-by-logos animate delay-2" bis_skin_checked="1">
@@ -164,7 +138,7 @@
                 <img class="animate animate-zoom delay-2" src="Images/logo_7.png" alt="Image">
             </div>
         </div>
-    </section>
+    </section> -->
     <section class="why-join py-120">
         <div class="custom--container" bis_skin_checked="1">
             <div class="row g-4 why-join-content-row" bis_skin_checked="1">
@@ -259,7 +233,8 @@
     <section class="courses">
         <div class="custom--container">
             <h3 class="courses-title animate delay-1">An Extensive Range Of Courses</h3>
-            <p class="courses-description animate delay-2">Explore 100+ Online Video Courses, With New Additions Each Month To Choose
+            <p class="courses-description animate delay-2">Explore 100+ Online Video Courses, With New Additions Each
+                Month To Choose
                 From.</p>
             <div class="courses-grid">
                 <div class="course-card courses-card--1 animate delay-3" bis_skin_checked="1">
@@ -327,9 +302,11 @@
                 <div class="live-course-info-row-one">
                     <div class="live-course-info-content">
                         <h3 class="live-course-info-title animate delay-2">What Will You Learn In Trading Course?</h3>
-                        <p class="live-course-info-description animate delay-3">Get real-time trading knowledge and practical market
+                        <p class="live-course-info-description animate delay-3">Get real-time trading knowledge and
+                            practical market
                             experience.</p>
-                        <a class="live-course-info-lightbox animate-zoom delay-2" href="https://www.youtube.com/watch?v=WOb4cj7izpE">
+                        <a class="live-course-info-lightbox animate-zoom delay-2"
+                            href="https://www.youtube.com/watch?v=WOb4cj7izpE">
                             <img src="https://script.viserlab.com/tutolab/assets/images/frontend/course_info/64dddd5b1d8401692261723.jpg"
                                 alt="Live Course Info Lightbox Thumb">
                         </a>
@@ -411,7 +388,8 @@
 
     <section class="student-reviews">
         <div class="custom--container">
-            <h3 class="student-reviews-title animate delay-1">Join Over 1,000 Happy Students From All Over The World</h3>
+            <h3 class="student-reviews-title animate delay-1">Join Over 1,000 Happy Students From All Over The World
+            </h3>
             <div class="student-reciews-row">
                 <div class="student-reviews-card animate delay-2" bis_skin_checked="1">
                     <div class="review-card">
@@ -697,6 +675,95 @@
             });
         });
     });
+</script>
+<script>
+    const canvas = document.getElementById("candlestickCanvas");
+    const ctx = canvas.getContext("2d");
+
+    canvas.width = window.innerWidth;
+    canvas.height = document.querySelector(".banner").offsetHeight;
+
+    let candles = [];
+    let frame = 0;
+
+    function drawGrid() {
+        ctx.strokeStyle = "rgba(255,255,255,0.05)";
+        ctx.lineWidth = 1;
+
+        for (let i = 0; i < canvas.width; i += 80) {
+            ctx.beginPath();
+            ctx.moveTo(i, 0);
+            ctx.lineTo(i, canvas.height);
+            ctx.stroke();
+        }
+
+        for (let i = 0; i < canvas.height; i += 60) {
+            ctx.beginPath();
+            ctx.moveTo(0, i);
+            ctx.lineTo(canvas.width, i);
+            ctx.stroke();
+        }
+    }
+
+    function createCandle() {
+        let open = Math.random() * canvas.height;
+        let close = open + (Math.random() - 0.5) * 60;
+        let high = Math.max(open, close) + Math.random() * 20;
+        let low = Math.min(open, close) - Math.random() * 20;
+
+        candles.push({ open, close, high, low });
+    }
+
+    function drawCandles() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        drawGrid();
+
+        let x = 50;
+        candles.forEach(candle => {
+            // wick
+            ctx.beginPath();
+            ctx.moveTo(x, candle.high);
+            ctx.lineTo(x, candle.low);
+            ctx.strokeStyle = "white";
+            ctx.stroke();
+
+            // body
+            ctx.beginPath();
+            ctx.rect(
+                x - 5,
+                Math.min(candle.open, candle.close),
+                10,
+                Math.abs(candle.open - candle.close)
+            );
+
+            if (candle.close > candle.open) {
+                ctx.fillStyle = "#00ff9d";
+            } else {
+                ctx.fillStyle = "#ff3b3b";
+            }
+
+            ctx.fill();
+            x += 22;
+        });
+    }
+
+    function animate() {
+        frame++;
+
+        // SPEED CONTROL (increase number = slower)
+        if (frame % 5 === 0) {
+            if (candles.length * 22 > canvas.width) {
+                candles.shift();
+            }
+            createCandle();
+        }
+
+        drawCandles();
+        requestAnimationFrame(animate);
+    }
+
+    animate();
 </script>
 
 </html>
