@@ -29,6 +29,8 @@
             color: #fff;
             position: relative;
             animation: popupFade 0.3s ease;
+            height: 60vh;
+            overflow: auto;
         }
 
         .popup-box h3 {
@@ -250,6 +252,51 @@
                             </div>
 
                         </div>
+
+                        <div class="pricing_of_algo">
+                            <table class="algo-table">
+                                <thead>
+                                    <tr>
+                                        <th>Capital (CENT)</th>
+                                        <th>3 Months (INR)</th>
+                                        <th>6 Months (INR)</th>
+                                        <th>12 Months (INR)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>60000</td>
+                                        <td>11999</td>
+                                        <td>19999</td>
+                                        <td>31999</td>
+                                    </tr>
+                                    <tr>
+                                        <td>120000</td>
+                                        <td>14999</td>
+                                        <td>22999</td>
+                                        <td>34999</td>
+                                    </tr>
+                                    <tr>
+                                        <td>210000</td>
+                                        <td>17999</td>
+                                        <td>25999</td>
+                                        <td>37999</td>
+                                    </tr>
+                                    <tr>
+                                        <td>240000</td>
+                                        <td>20999</td>
+                                        <td>28999</td>
+                                        <td>40999</td>
+                                    </tr>
+                                    <tr>
+                                        <td>300000</td>
+                                        <td>23999</td>
+                                        <td>31999</td>
+                                        <td>43999</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                     <div class="course-detail-page-column course-detail-page-column--sidebar" bis_skin_checked="1">
                         <aside class="course-sidebar">
@@ -263,10 +310,10 @@
                                 <div class="course-sidebar-box course-sidebar-box--two" bis_skin_checked="1">
                                     <div class="course-details" bis_skin_checked="1">
                                         <div class="course-details-wrapper" bis_skin_checked="1">
-                                            <h4 class="course-price">
+                                            <!-- <h4 class="course-price">
                                                 <small><del class="text-muted fs-18">$100.00</del></small>
                                                 $90.00
-                                            </h4>
+                                            </h4> -->
 
 
                                         </div>
@@ -310,19 +357,52 @@
                                                     <input type="hidden" name="plan" value="Techno Algo System">
 
                                                     <div class="input-group">
-                                                        <select name="duration" required>
+                                                        <select name="algo_service" required>
                                                             <option value="" disabled selected></option>
-                                                            <option>1 Month</option>
-                                                            <option>3 Months</option>
-                                                            <option>6 Months</option>
-                                                            <option>1 Year</option>
+                                                            <option>XAUUSD</option>
                                                         </select>
-                                                        <label>Select Plan Duration</label>
+                                                        <label>Algo service</label>
+                                                    </div>
+                                                    <div class="input-group">
+                                                        <select name="broker" required>
+                                                            <option value="" disabled selected></option>
+                                                            <option>Exness</option>
+                                                            <option>Vantage</option>
+                                                            <option>XM</option>
+                                                        </select>
+                                                        <label>Broker</label>
                                                     </div>
 
                                                     <div class="input-group">
-                                                        <input type="text" name="trading_id" required>
-                                                        <label>TradingView ID</label>
+                                                        <input type="text" name="broker_account_number" required>
+                                                        <label>Broker Account Number</label>
+                                                    </div>
+                                                    <div class="input-group">
+                                                        <select name="capital" required>
+                                                            <option value="" disabled selected></option>
+                                                            <option>1000 USD</option>
+                                                            <option>3000 USD</option>
+                                                            <option>5000 USD</option>
+                                                            <option>10,000 USD</option>
+                                                        </select>
+                                                        <label>Select Your Capital</label>
+                                                    </div>
+                                                    <div class="input-group">
+                                                        <select name="price" required>
+                                                            <option value="" disabled selected></option>
+                                                            <option>₹18,000 for 1000 USD capital</option>
+                                                            <option>₹38,000 for 3000 USD capital</option>
+                                                            <option>₹58,000 for 5000 USD capital</option>
+                                                            <option>₹1,08,000 for 10,000 USD capital</option>
+                                                        </select>
+                                                        <label>Select Your Price</label>
+                                                    </div>
+                                                    <div class="input-group">
+                                                        <select name="plan_duration" required>
+                                                            <option value="" disabled selected></option>
+                                                            <option>3 Months</option>
+                                                        </select>
+                                                        <label>Plan Duration</label>
                                                     </div>
 
                                                     <div class="input-group">
@@ -455,10 +535,12 @@
 <script>
     function openPopup() {
         document.getElementById("contactPopup").style.display = "flex";
+        document.body.style.overflow = "hidden"; // 🔒 scroll stop
     }
 
     function closePopup() {
         document.getElementById("contactPopup").style.display = "none";
+        document.body.style.overflow = "auto"; // 🔓 scroll start
     }
 </script>
 <script>
