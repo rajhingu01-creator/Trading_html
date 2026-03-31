@@ -1929,6 +1929,9 @@ h4.contact-section__title {
 .contact-section-address {
     padding-left: 48px !important;
     padding-right: 24px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
 }
 a.address-card__link {
     color: #3b75b0;
